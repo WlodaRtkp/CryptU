@@ -5,7 +5,7 @@ from tkinter import messagebox, Entry, Label, Button, StringVar, Text
 class VigenereApp:
     def __init__(self, master):
         self.master = master
-        master.title("Vigenere Cipher App")
+        master.title("CryptU")
 
         self.operation_var = StringVar()
         self.key_var = StringVar()
@@ -73,18 +73,18 @@ class VigenereApp:
 
         if operation == 'E':
             cipher_text = self.vigenere_encrypt(message, key)
-            self.result_text.delete(1.0, tk.END)  # Clear previous text
+            self.result_text.delete(1.0, tk.END) 
             self.result_text.insert(tk.END, f"Ciphertext: {cipher_text}")
         elif operation == 'D':
             decrypted_text = self.vigenere_decrypt(message, key)
-            self.result_text.delete(1.0, tk.END)  # Clear previous text
+            self.result_text.delete(1.0, tk.END)  
             self.result_text.insert(tk.END, f"Decrypted text: {decrypted_text}")
 
     def reset_fields(self):
         self.operation_var.set('')
         self.key_var.set('')
         self.message_var.set('')
-        self.result_text.delete(1.0, tk.END)  # Clear previous text
+        self.result_text.delete(1.0, tk.END)  
 
 if __name__ == "__main__":
     root = tk.Tk()
