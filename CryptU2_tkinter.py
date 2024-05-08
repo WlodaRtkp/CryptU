@@ -31,11 +31,8 @@ class FernetApp:
         Button(master, text="Reset", command=self.reset_fields).grid(row=9, column=0, columnspan=2)
 
     def encode_key(self, key):
-        # Convert the key to bytes
         key_bytes = key.encode()
-        # Pad the key if its length is less than 32 bytes
         padded_key = key_bytes.ljust(32, b'=')
-        # Base64 encode the padded key
         encoded_key = base64.urlsafe_b64encode(padded_key)
         return encoded_key
 
