@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptU</title>
+</head>
+<body>
+    <h1>CryptU</h1>
+    <form method="post">
+        <label for="operation">Choose Operation:</label>
+        <select name="operation" id="operation">
+            <option value="E">Encrypt</option>
+            <option value="D">Decrypt</option>
+        </select>
+        <br>
+        <label for="message">Enter Message:</label>
+        <input type="text" name="message" id="message" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
